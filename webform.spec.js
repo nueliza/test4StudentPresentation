@@ -21,6 +21,8 @@ describe( 'Testing WebApp Main Page', function() {
    it('successfully visits the math link',function(){
   	cy.get('.items').find('a')
   	.first().contains('Math').click()
+    
+    cy.url().should('include', '/math.jsp') 
   	cy.wait(2000)
   	cy.visit( 'http://localhost:8080' )
  
@@ -35,7 +37,9 @@ describe( 'Testing WebApp Main Page', function() {
   it('successfully visits the form link',function(){
   	cy.get('.items').find('a')
   	.last().contains('Form').click()
-	cy.wait(2000)
+
+    cy.url().should('include', '/form.jsp') 
+	  cy.wait(2000)
   	cy.visit( 'http://localhost:8080' )
   })
 
