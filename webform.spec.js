@@ -3,11 +3,11 @@ describe( 'Testing WebApp Main Page', function() {
     cy.visit( 'http://localhost:8080' )
   })
 
-  it('successfully finds the title', function(){
+  it('successfully finds the header', function(){
   	cy.get('.top > tbody > tr > td > h2').should('have.text','ENPM614')
   })
 
-  it('successfully finds the heading', function(){
+  it('successfully finds the title', function(){
   	cy.get('.items > tbody > :nth-child(1) > td').should('have.text','Assignment 3 Toy Web App')
   })
 
@@ -37,12 +37,11 @@ describe( 'Testing WebApp Main Page', function() {
   	.last().contains('Form').click()
 	cy.wait(2000)
   	cy.visit( 'http://localhost:8080' )
- 
   })
 
-
-
-
+  it('successfully finds the footer', function(){
+    cy.get('.bottom > tbody > tr > td').should('have.text','Copyright © 2010 - 2018 ANepaul')
+  })
 
 
 }) 
